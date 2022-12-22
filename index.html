@@ -16,9 +16,15 @@
         <div class="product-container">
           <div class="product-image">
             <!-- image goes here -->
+            <img v-bind:src="image">
+            <a v-bind:href="url">Link to Google</a>
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-show="onSale">On Sale</p>
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory > 2 && inventory <= 10">Few units left</p>
+            <p v-else>Out of stock</p>
           </div>
         </div>
       </div>
